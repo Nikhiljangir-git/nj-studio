@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Your Project | NJ Studio</title>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("E-zjP87eOIZNZLXe1"); // yahan apna public key daal
+    })();
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0a0a0a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .form-container {
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      text-align: center;
+    }
+    h2 { margin-bottom: 20px; }
+    label { display: block; text-align: left; margin-bottom: 5px; }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      background: #333;
+      color: white;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background: #ffcc00;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover { background: #ffcc00; }
+    .thank-you { display: none; font-size: 1.2rem; color: #ffcc00; }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Book Your Project</h2>
+    <form id="bookingForm">
+      <label>Name</label>
+      <input type="text" name="name" required>
+      <label>Phone</label>
+      <input type="tel" name="phone" required>
+      <label>Service</label>
+      <select name="service" required>
+        <option value="">-- Select Service --</option>
+        <option value="Video Editing">Video Editing</option>
+        <option value="Shooting">Shooting</option>
+        <option value="Reel">Instagram Reel</option>
+        <option value="Wedding Film">Wedding Film</option>
+      </select>
+      <label>Date</label>
+      <input type="date" name="date" required>
+      <label>Brief</label>
+      <textarea name="brief" rows="4" required></textarea>
+      <button type="submit">Submit Booking</button>
+    </form>
+    <div class="thank-you">✅ Thank you for booking! We'll contact you soon.</div>
+  </div>
+
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const form = this;
+
+      emailjs.sendForm("service_tikea88", "template_4hg0pgb", form)
+        .then(function() {
+          form.style.display = "none";
+          document.querySelector(".thank-you").style.display = "block";
+        }, function(error) {
+          alert("❌ Error: " + JSON.stringify(error));
+        });
+    });
+  </script>
+</body>
+</html>
