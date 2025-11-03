@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NJ Studio — Visual Storytelling by Nikhil Jangir</title>
+  <style>
+    * {box-sizing: border-box;}
+    html,body {
+      height: 100%;
+      margin: 0;
+      font-family: "Inter", system-ui, sans-serif;
+      background: #000;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    a {color: inherit; text-decoration: none;}
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      background: rgba(0, 0, 0, 0.9);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #000;
+      border: 2px solid rgba(255,255,255,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .logo-img:hover {
+      transform: scale(1.05);
+    }
+
+    .brand h1 {
+      font-size: 1.5rem;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    .brand .tag {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    section {
+      padding: 5rem 3rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #ffcc00;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin: 0 0 1rem;
+      font-weight: 800;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #bbb;
+      max-width: 700px;
+    }
+
+    .buttons {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .buttons a {
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .buttons a.primary {
+      background: #ffcc00;
+      color: #000;
+    }
+
+    .buttons a.primary:hover {
+      background: #e6b800;
+    }
+
+    .buttons a.secondary {
+      border: 1px solid #fff;
+    }
+
+    .buttons a.secondary:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    .services, .portfolio {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #111;
+      padding: 1.5rem;
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(255,255,255,0.1);
+    }
+
+    .card h3 {
+      margin: 0 0 0.5rem;
+      color: #ffcc00;
+    }
+
+    footer {
+      background: #0a0a0a;
+      text-align: center;
+      padding: 3rem 1rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 5rem;
+    }
+
+    .socials {
+      margin-top: 1rem;
+    }
+
+    .socials a {
+      margin: 0 0.8rem;
+      font-size: 1.5rem;
+      color: #ffcc00;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      color: #fff;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <img src="nj logo.png" alt="NJ Studio Logo" class="logo-img" />
+      <div>
+        <h1>NJ Studio</h1>
+        <div class="tag">Visual Storytelling by Nikhil Jangir</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero fade-in">
+    <h2>NJ Studio</h2>
+    <h1>Cinematic Edits. Story-driven Visuals. High-impact Content.</h1>
+    <p>We craft cinematic videos for brands, weddings, cars and creators — combining polished editing with strong storytelling. Scroll to see services and portfolio.</p>
+    <div class="buttons">
+      <a href="#contact" class="primary">Book Now</a>
+      <a href="#portfolio" class="secondary">View Work</a>
+    </div>
+  </section>
+
+  <section id="services" class="fade-in">
+    <h2>Services</h2>
+    <div class="services">
+      <div class="card"><h3>🎬 Video Editing</h3><p>Professional cinematic edits for brands, creators, and YouTube channels.</p></div>
+      <div class="card"><h3>💍 Wedding Shoot</h3><p>Capturing emotions, moments, and memories with elegance and style.</p></div>
+      <div class="card"><h3>🎨 Graphic Designing</h3><p>Posters, thumbnails, and social content that build visual identity.</p></div>
+      <div class="card"><h3>🚗 Car Delivery Shoot</h3><p>Dynamic shoots to make every car delivery look like a cinematic celebration.</p></div>
+      <div class="card"><h3>📱 Content Creation</h3><p>End-to-end reels, ads, and campaigns optimized for social media reach.</p></div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="fade-in">
+    <h2>Portfolio</h2>
+    <p>Explore our work on Instagram and YouTube.</p>
+    <div class="buttons">
+      <a href="https://www.instagram.com/" target="_blank" class="primary">Instagram</a>
+      <a href="https://www.youtube.com/" target="_blank" class="secondary">YouTube</a>
+    </div>
+  </section>
+
+  <section id="contact" class="fade-in">
+    <h2>Contact</h2>
+    <p><strong>📞 Nikhil:</strong> 9351043991<br>
+    <strong>📞 Yogesh:</strong> 8302406024<br>
+    <strong>📧 Email:</strong> nikhiljangir9351@gmail.com</p>
+  </section>
+
+  <footer>
+    <h3>Follow Us</h3>
+    <div class="socials">
+      <a href="https://www.instagram.com/" target="_blank">📸</a>
+      <a href="https://wa.me/9351043991" target="_blank">💬</a>
+    </div>
+    <p style="margin-top:1rem; color:#888;">© 2025 NJ Studio — Visual Storytelling by Nikhil Jangir. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const appear = () => {
+      fadeEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', appear);
+    appear();
+  </script>
+
+</body>
+</html>
