@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NJ Studio — Visual Storytelling by Nikhil Jangir</title>
   <style>
+    .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
     * {box-sizing: border-box;}
     html,body {
       height: 100%;
@@ -370,8 +378,24 @@
 .btn:hover {
   background-color: #FFD700; /* Yellow background on hover */
   color: black; /* Black text on hover */
+  box-shadow: 0 0 10px #FFD700;
 }
 
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
   </style>
 </head>
@@ -450,7 +474,9 @@
     <h2>Contact</h2>
     <p><strong>📞 Nikhil jangir:</strong>+91 9351043991<br>
     <strong>💬 Yogesh jangir:</strong>+91 8302406024<br>
-    <strong>📧 Email:</strong> nikhiljangir9351@gmail.com</p>
+    <strong>📧 Email:</strong> <a class="mail-link" href="mailto:nj.studio.27@gmail.com" target="_blank">
+       nj.studio.27@gmail.com
+      </a></p>
   </section>
 
   <footer>
@@ -460,12 +486,18 @@
       <a href="https://www.instagram.com/nj_studio__" target="_blank" class="icon-box">
         <img src="instagram.png" alt="Instagram">
       </a>
-      <a href="https://wa.me/9351043991" target="_blank" class="icon-box">
+      <a href="https://chat.whatsapp.com/FEWMomRFCBJ3I2IFvtalXm" target="_blank" class="icon-box">
         <img src="whatsapp.png" alt="WhatsApp">
       </a>
       <a href="https://www.linkedin.com" target="_blank" class="icon-box">
         <img src="linkedin.png" alt="LinkedIn">
       </a>
+       
+    <a href="https://www.youtube.com/channel/UCLMdG8TsqhcXRSJ4zVPPKg" target="_blank" class="icon-box">
+      <img src="youtube.png" alt="YouTube">
+    </a>
+  
+      
     </div>
     <p>© 2025 NJ Studio — Visual Storytelling by Nikhil Jangir.</p>
   </div>
