@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Script Writing — NJ Studio</title>
+
+  <!-- Cinematic Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: 'Cinzel', serif;
+      text-align: center;
+    }
+
+    header {
+      padding: 20px;
+      font-size: 26px;
+      color: #f7c600;
+      background: #0b0b0b;
+      letter-spacing: 1px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.6);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .text-card {
+      height: 230px;
+      background: #0b0b0b;
+      border-radius: 14px;
+      padding: 25px;
+      text-align: left;
+      box-shadow: 0 0 20px rgba(247,198,0,0.15);
+      transition: 0.4s ease;
+      cursor: pointer;
+    }
+
+    .text-card h3 {
+      color: #f7c600;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+      font-size: 18px;
+    }
+
+    .text-card p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    .text-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(247,198,0,0.4);
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 50px;
+      padding: 10px 16px;
+      border: 2px solid #f7c600;
+      color: #f7c600;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: 0.3s ease;
+    }
+
+    .back:hover {
+      background: #f7c600;
+      color: #000;
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>Script Writing — NJ Studio</header>
+
+  <div class="gallery">
+
+    <div class="text-card">
+      <h3>Short-Form Reel Scripts</h3>
+      <p>
+        • Instagram Reels & YouTube Shorts<br>
+        • Fast-paced storytelling<br>
+        • High-retention structure
+      </p>
+    </div>
+
+    <div class="text-card">
+      <h3>Hook & Story Structure</h3>
+      <p>
+        • Strong first 3 seconds hook<br>
+        • Clear flow & message<br>
+        • Emotion-driven writing
+      </p>
+    </div>
+
+    <div class="text-card">
+      <h3>Brand & CTA Scripts</h3>
+      <p>
+        • Brand-aligned tone<br>
+        • Audience-focused language<br>
+        • Conversion-optimized CTA
+      </p>
+    </div>
+
+  </div>
+
+  <a href="work.html" class="back">⬅ Back to Work</a>
+
+</body>
+</html>
