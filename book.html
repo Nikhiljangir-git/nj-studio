@@ -1,99 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book Your Project | NJ Studio</title>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("E-zjP87eOIZNZLXe1"); // yahan apna public key daal
-    })();
-  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Now - NJ Studio</title>
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #0a0a0a;
-      color: white;
+      font-family: "Poppins", sans-serif;
+      background: #111;
+      color: #fff;
+      margin: 0;
+      padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
     }
-    .form-container {
-      background: #1a1a1a;
+
+    form {
+      background: #1e1e1e;
       padding: 30px;
-      border-radius: 15px;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-      text-align: center;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      width: 350px;
     }
-    h2 { margin-bottom: 20px; }
-    label { display: block; text-align: left; margin-bottom: 5px; }
+
+    h2 {
+      text-align: center;
+      color: #ffb400;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
     input, select, textarea {
       width: 100%;
       padding: 10px;
-      margin-bottom: 15px;
+      margin-top: 5px;
       border: none;
-      border-radius: 8px;
-      background: #333;
-      color: white;
+      border-radius: 10px;
+      background: #2b2b2b;
+      color: #fff;
+      font-size: 14px;
     }
-    button {
-      width: 100%;
+
+    textarea {
+      height: 80px;
+      resize: none;
+    }
+
+    .book-btn {
+      background: #ffb400;
+      color: #111;
       padding: 12px;
+      width: 100%;
+      margin-top: 20px;
       border: none;
-      background: #ffcc00;
-      color: white;
+      border-radius: 10px;
       font-weight: bold;
-      border-radius: 8px;
       cursor: pointer;
       transition: 0.3s;
     }
-    button:hover { background: #ffcc00; }
-    .thank-you { display: none; font-size: 1.2rem; color: #ffcc00; }
+
+    .book-btn:hover {
+      background: #ffc933;
+      transform: scale(1.05);
+    }
+
+    /* Thank You Popup */
+    #thankYouBox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    #thankYouBox.hidden {
+      display: none;
+    }
+    #thankYouBox .popup {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 15px;
+      text-align: center;
+      color: #111;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      animation: fadeIn 0.4s ease;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.8);}
+      to {opacity: 1; transform: scale(1);}
+    }
   </style>
 </head>
+
 <body>
-  <div class="form-container">
-    <h2>Book Your Project</h2>
-    <form id="bookingForm">
-      <label>Name</label>
-      <input type="text" name="name" required>
-      <label>Phone</label>
-      <input type="tel" name="phone" required>
-      <label>Service</label>
-      <select name="service" required>
-        <option value="">-- Select Service --</option>
-        <option value="Video Editing">Video Editing</option>
-        <option value="Shooting">Shooting</option>
-        <option value="Reel">Instagram Reel</option>
-        <option value="Wedding Film">Wedding Film</option>
-      </select>
-      <label>Date</label>
-      <input type="date" name="date" required>
-      <label>Brief</label>
-      <textarea name="brief" rows="4" required></textarea>
-      <button type="submit">Submit Booking</button>
-    </form>
-    <div class="thank-you">✅ Thank you for booking! We'll contact you soon.</div>
+
+  <form id="booking-form">
+    <h2>collaboration</h2>
+
+    <label>Name</label>
+    <input type="text" name="user_name" required>
+
+    <label>Phone</label>
+    <input type="tel" name="user_phone" required>
+
+    <label>Service</label>
+    <select name="service" required>
+      <option value="">Select Service</option>
+      <option>Page Management</option>
+      <option>Editing-Short Format</option>
+      <option>Editing-Long Format</option>
+      <option>Design-Thumbnail</option>
+      <option>Design-banner</option>
+    </select>
+
+    <label>Email</label>
+   <input type="email" name="user_email" required>
+
+    <label>Work Brief</label>
+    <textarea name="message" placeholder="Describe your project..." required></textarea>
+
+    <button type="submit" class="book-btn">Submit</button>
+  </form>
+
+  <!-- Thank You Popup -->
+  <div id="thankYouBox" class="hidden">
+    <div class="popup">
+      <h3>✅ Thank you for booking!</h3>
+      <p>We’ll contact you as soon as !</p>
+    </div>
   </div>
 
+  <!-- EmailJS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
-    document.getElementById("bookingForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const form = this;
+    (function(){
+      emailjs.init("E-zjP87eOIZNZLXe1"); // <-- Yahan apna EmailJS public key daal
+    })();
 
-      emailjs.sendForm("service_tikea88", "template_4hg0pgb", form)
-        .then(function() {
-          form.style.display = "none";
-          document.querySelector(".thank-you").style.display = "block";
-        }, function(error) {
-          alert("❌ Error: " + JSON.stringify(error));
-        });
+    document.getElementById("booking-form").addEventListener("submit", function(e){
+      e.preventDefault();
+
+      emailjs.sendForm("service_tikea88", "template_4hg0pgb", this)
+      .then(() => {
+        document.getElementById("thankYouBox").classList.remove("hidden");
+        setTimeout(() => {
+          document.getElementById("thankYouBox").classList.add("hidden");
+          document.getElementById("booking-form").reset();
+        }, 3000);
+      })
+      .catch((err) => console.log("Error:", err));
     });
   </script>
+
 </body>
 </html>
