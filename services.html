@@ -1,9 +1,15 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services — NJ Studio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
     body {
       background: linear-gradient(120deg, #000, #111);
@@ -11,13 +17,13 @@
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      animation: fadeIn 1.5s ease;
       text-align: center;
+      animation: fadeIn 1.5s ease;
     }
 
     @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     header {
@@ -37,12 +43,13 @@
       margin: 50px auto;
       font-size: 18px;
       color: #ccc;
+      padding: 0 20px;
     }
 
+    /* ✅ SERVICES GRID */
     .services-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 30px;
       max-width: 1100px;
       margin: 0 auto 60px;
@@ -51,11 +58,10 @@
 
     .card {
       background: rgba(20, 20, 20, 0.9);
-      width: 280px;
       padding: 30px;
       border-radius: 16px;
       box-shadow: 0 6px 24px rgba(0,0,0,0.6);
-      transition: 0.4s;
+      transition: 0.4s ease;
     }
 
     .card:hover {
@@ -63,16 +69,17 @@
       box-shadow: 0 8px 30px rgba(247,198,0,0.3);
     }
 
-    h2 {
+    .card h2 {
       color: #f7c600;
-      font-size: 24px;
-      margin-bottom: 10px;
+      font-size: 22px;
+      margin-bottom: 12px;
     }
 
-    p {
+    .card p {
       color: #ddd;
       font-size: 15px;
       line-height: 1.6;
+      margin: 0;
     }
 
     .back-btn {
@@ -94,40 +101,94 @@
     }
   </style>
 </head>
+
 <body>
+
   <header>
-    <h1>🎥 NJ Studio — Our Services</h1>
+    <h1>NJ Studio — Our Services</h1>
   </header>
 
   <p class="intro">
-    From idea to final edit — NJ Studio provides full film production and creative services that turn imagination into cinematic experiences.
+    NJ Studio focuses entirely on post-production services — turning raw footage into clean, engaging, and cinematic final edits.
   </p>
 
   <div class="services-container">
 
     <div class="card">
-      <h2>Pre-Production</h2>
-      <p>• Concept Development<br>• Script Writing<br>• Storyboarding<br>• Casting<br>• Location Scouting<br>• Budget Planning</p>
+      <h2>Page Management</h2>
+      <p>
+        • Social Media Page Handling<br>
+        • Content Planning & Scheduling<br>
+        • Reel / Post Upload Management<br>
+        • Caption Writing & Hashtag Strategy<br>
+        • Consistent Brand Aesthetics<br>
+        • Performance Monitoring & Growth Support
+      </p>
     </div>
 
     <div class="card">
-      <h2>Production</h2>
-      <p>• Cinematography & Direction<br>• Drone Videography<br>• Lighting & Set Design<br>• Sound Recording<br>• On-Set Supervision</p>
+      <h2>Editing — Short Format</h2>
+      <p>
+        • Reels & Shorts Editing<br>
+        • Fast Cuts & Smooth Transitions<br>
+        • Hook-Based Storytelling<br>
+        • Beat Sync & Motion Effects<br>
+        • Captions & On-Screen Text<br>
+        • Platform-Optimized Export
+      </p>
     </div>
 
     <div class="card">
-      <h2>Post-Production</h2>
-      <p>• Video Editing & Color Grading<br>• Motion Graphics / VFX<br>• Sound Design<br>• Trailer Creation<br>• Final Mastering</p>
+      <h2>Design — Thumbnails</h2>
+      <p>
+        • Eye-Catching Thumbnail Design<br>
+        • YouTube & Reels Thumbnails<br>
+        • Bold Typography & Layout<br>
+        • Color Grading & Visual Contrast<br>
+        • Click-Optimized Composition<br>
+        • Platform-Specific Dimensions
+      </p>
     </div>
 
     <div class="card">
-      <h2>Brand & Marketing</h2>
-      <p>• Brand Films / Ad Films<br>• Wedding & Music Videos<br>• Social Media Reels<br>• Event & Corporate Shoots</p>
+      <h2>Editing — Long Format</h2>
+      <p>
+        • Long-Form Video Editing<br>
+        • YouTube, Podcasts & Interviews<br>
+        • Clean Cuts & Story Flow<br>
+        • Color Correction & Audio Sync<br>
+        • Retention-Focused Pacing<br>
+        • Final Export & Optimization
+      </p>
     </div>
+
+    <div class="card">
+      <h2>Design — Banners</h2>
+      <p>
+        • YouTube Channel Banner Design<br>
+        • Instagram Page & Highlight Banners<br>
+        • LinkedIn & Brand Page Banners<br>
+        • Clean Layout & Visual Hierarchy<br>
+        • Brand-Consistent Colors & Fonts<br>
+        • Platform-Optimized Dimensions
+      </p>
+    </div>
+    <div class="card">
+  <h2>Content — Script Writing</h2>
+  <p>
+    • Short-Form Reel & Shorts Scripts<br>
+    • Hook-Based Opening (First 3 Seconds)<br>
+    • Clear Story Flow & Structure<br>
+    • Platform-Specific Script Style<br>
+    • Audience-Focused & Engaging Tone<br>
+    • CTA-Optimized Endings
+  </p>
+</div>
+
 
   </div>
 
   <a href="index.html" class="back-btn">⬅ Back to Home</a>
+
 </body>
 </html>
-
