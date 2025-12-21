@@ -1,152 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio — NJ Studio</title>
-  <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(120deg, #000, #111);
-      color: #fff;
-      margin: 0;
-      padding: 0;
-      animation: fadeIn 1.5s ease;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NJ Studio Team</title>
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+<style>
+  body {
+    margin: 0;
+    background: #000;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+  }
 
-    header {
-      text-align: center;
-      padding: 40px 20px 20px;
-      background: #0b0b0b;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    }
+  .team-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
 
-    header h1 {
-      color: #f7c600;
-      font-size: 34px;
-      margin: 0;
-    }
+  .team-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: #f7c600;
+    letter-spacing: 1px;
+  }
 
-    .section {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
+  /* ROWS */
+  .team-row {
+    display: grid;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
 
-    .founder, .team {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 40px;
-      margin-top: 40px;
-    }
+  /* First row → 2 members */
+  .row-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .card {
-      background: rgba(20, 20, 20, 0.9);
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.6);
-      max-width: 300px;
-      transition: 0.3s;
-    }
+  /* Second row → 3 members */
+  .row-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 30px rgba(247,198,0,0.3);
-    }
+  /* CARD */
+  .card {
+    background: #0b0b0b;
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease;
+  }
 
-    .card img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin-bottom: 15px;
-      border: 3px solid #f7c600;
-      object-fit: cover;
-    }
+  .card:hover {
+    transform: translateY(-6px);
+  }
 
-    h2 {
-      color: #f7c600;
-      font-size: 26px;
-      margin-bottom: 10px;
-    }
+  .card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 2px solid #f7c600;
+  }
 
-    h3 {
-      color: #f7c600;
-      font-size: 22px;
-      margin-bottom: 15px;
-    }
+  .card h3 {
+    margin: 10px 0 5px;
+    font-size: 20px;
+  }
 
-    p {
-      font-size: 15px;
-      color: #ddd;
-      line-height: 1.6;
-    }
+  .card strong {
+    color: #f7c600;
+    font-size: 14px;
+  }
 
-    .back-btn {
-      display: inline-block;
-      margin-top: 50px;
-      background: transparent;
-      border: 2px solid #f7c600;
-      color: #f7c600;
-      padding: 12px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
+  .card p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 10px;
+    color: #ccc;
+  }
 
-    .back-btn:hover {
-      background: #f7c600;
-      color: #000;
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .row-2,
+    .row-3 {
+      grid-template-columns: repeat(1, 1fr);
     }
-  </style>
+  }
+</style>
 </head>
+
 <body>
-  <header>
-    <h1>NJ Studio — Portfolio</h1>
-  </header>
 
-  <section class="section">
-    <h2>Founder</h2>
-    <div class="founder">
-      <div class="card">
-        <!-- <img src="founder.jpg" alt="Nikhil Jangir"> -->
-        <h3>Nikhil Jangir</h3>
-        <p><strong>Founder | Director | Editor</strong></p>
-        <p>Nikhil is the creative force behind NJ Studio — a filmmaker and editor with a vision to turn ideas into cinematic realities. His focus lies in crafting films that connect emotionally and look visually stunning.</p>
-      </div>
-    </div>
-  </section>
+<section class="team-section">
+  <h2 class="team-title">Portfolio - NJ Studio</h2>
 
-  <section class="section">
-    <h2>co-founder</h2>
-    <div class="team">
-      <div class="card">
-        <!-- <img src="yogesh.jpg" alt="Yogesh Jangir"> -->
-        <h3>Yogesh Jangir</h3>
-        <p><strong>Co-Founder | Cinematographer</strong></p>
-        <p>Yogesh brings stories to life through his lens. His eye for detail and passion for visual storytelling define NJ Studio’s unique cinematography style.</p>
-      </div>
+  <!-- FIRST ROW : FOUNDER & CO-FOUNDER -->
+  <div class="team-row row-2">
+    <div class="card">
 
-      <!-- Example of adding more members later -->
-      <!--
-      <div class="card">
-        <img src="team2.jpg" alt="Team Member">
-        <h3>Another Member</h3>
-        <p><strong>Editor / Designer</strong></p>
-        <p>Specializes in motion graphics and visual storytelling for digital campaigns and cinematic projects.</p>
-      </div>
-      -->
+      <h3>Nikhil Jangir</h3>
+      <strong>Founder | Director | Editor</strong>
+      <p>
+Nikhil Jangir is the Founder and creative leader of NJ Studio, with strong hands-on experience in the media and content industry. As a filmmaker and editor, he leads projects from concept to final delivery, ensuring cinematic quality and emotional impact.
+
+With a clear creative vision and industry insight, Nikhil also leads and manages a team of editors and creatives—driving consistency, quality, and growth. His leadership blends storytelling, design, and execution to build NJ Studio as a professional and scalable creative studio.
+      </p>
     </div>
 
-    <a href="index.html" class="back-btn">⬅ Back to Home</a>
-  </section>
+    <div class="card">
+
+      <h3>Yogesh Jangir</h3>
+      <strong>Co-Founder | Designer</strong>
+      <p>
+Yogesh Jangir is the Co-Founder and design lead at NJ Studio, playing a key role in shaping the studio’s visual identity. With a strong sense of design aesthetics and visual storytelling, he turns concepts into impactful, visually compelling designs.
+
+As a creative partner in NJ Studio, Yogesh ensures brand consistency, quality design execution, and a clear visual direction across projects. His design expertise and collaborative mindset make him an essential pillar in building NJ Studio as a professional and creative brand.
+      </p>
+    </div>
+  </div>
+
+  <!-- SECOND ROW : EDITORS -->
+
+  
+  
+
+  <div class="team-row row-3">
+    <div class="card">
+  
+      <h3>PK Editor</h3>
+      <strong>Senior Video Editor</strong>
+      <p>
+PK Editor brings 3+ years of experience in video editing, specializing in
+      motion graphics, 3D animation, and documentary-style storytelling. His work
+      combines strong visuals with structured narratives to create impactful,
+      high-quality content.
+      </p>
+    </div>
+
+    <!-- Future Editor -->
+    <div class="card">
+     
+      <h3>Tanisha Negi</h3>
+      <strong>Video Editor</strong>
+      <p>
+Tanisha Negi is a professional video editor with over 1+ years of experience.
+She specializes in motion graphics, 3D animation, and documentary-style editing, with a strong focus on creative visuals, smooth transitions, and audience-driven storytelling—delivering high-quality content across multiple platforms.
+      </p>
+    </div>
+
+    <!-- Future Editor -->
+    <div class="card">
+    
+      <h3>Anmol Bhatti</h3>
+      <strong>Video Editor</strong>
+      <p>
+   Anmol Bhatti is a skilled video editor at NJ Studio,who has  
+      hands-on experience with multiple clients. He specializes in clean cuts, engaging storytelling,
+      and high-retention edits, delivering polished and platform-ready content
+     .
+      </p>
+    </div>
+  </div>
+
+   <!-- ROW 3 : Future Designers / Editors -->
+  <div class="team-row row-3">
+    <div class="card ">
+      <h3>Ansh Jouhari</h3>
+      <strong>Senior Graphic Designer</strong>
+      <p>Ansh Jouhari is a highly experienced graphic designer at NJ Studio with 4+ years of industry experience. He specializes in creating high-CTR thumbnails, banners, and performance-driven designs that enhance brand visibility and audience engagement.
+
+With a strong understanding of visual psychology, platform trends, and branding, Ansh delivers designs that are not only visually appealing but also strategically effective. His expertise plays a key role in strengthening NJ Studio’s creative output and client results.</p>
+    </div>
+
+    <div class="card ">
+      <h3>Coming Soon</h3>
+      <strong>Video Editor</strong>
+      <p>New creative member will be added here.</p>
+    </div>
+
+    <div class="card ">
+      <h3>Coming Soon</h3>
+      <strong>Video Editor</strong>
+      <p>New creative member will be added here.</p>
+    </div>
+  </div>
+
+</section>
+
 </body>
 </html>
+
