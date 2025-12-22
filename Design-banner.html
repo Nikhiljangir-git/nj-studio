@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Design-banner — NJ Studio</title>
+  <title>Design Banner — NJ Studio</title>
 
   <!-- Cinematic Font -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
@@ -30,32 +30,33 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 25px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 50px auto;
       padding: 0 20px;
     }
 
     .gallery img {
       width: 100%;
-      height: 230px;
-      object-fit: cover;
+      height: auto;                 /* ✅ FULL BANNER */
+      object-fit: contain;          /* ✅ NO CROP */
       border-radius: 14px;
+      background: #000;
       cursor: pointer;
-      filter: brightness(75%);
+      filter: brightness(88%);
       transition: 0.4s ease;
       box-shadow: 0 0 20px rgba(247,198,0,0.15);
     }
 
     .gallery img:hover {
       filter: brightness(100%);
-      transform: scale(1.05);
+      transform: scale(1.03);
       box-shadow: 0 0 30px rgba(247,198,0,0.4);
     }
 
     .back {
       display: inline-block;
-      margin-bottom: 50px;
-      padding: 10px 16px;
+      margin: 40px 0 60px;
+      padding: 12px 20px;
       border: 2px solid #f7c600;
       color: #f7c600;
       text-decoration: none;
@@ -70,13 +71,19 @@
       color: #000;
     }
 
-    @media (max-width: 768px) {
+    /* Tablet */
+    @media (max-width: 900px) {
       .gallery {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 480px) {
+    /* Mobile */
+    @media (max-width: 500px) {
+      header {
+        font-size: 22px;
+      }
+
       .gallery {
         grid-template-columns: 1fr;
       }
@@ -86,12 +93,12 @@
 
 <body>
 
-  <header>Design-banner  — NJ Studio</header>
+  <header>Design Banner — NJ Studio</header>
 
   <div class="gallery">
-    <img src="banner1.png" alt="banner 1">
-    <img src="banner2.png" alt="banner 2">
-    <img src="banner3.png" alt="banner 3">
+    <img src="banner1.png" alt="Design Banner 1">
+    <img src="banner2.png" alt="Design Banner 2">
+    <img src="banner3.png" alt="Design Banner 3">
   </div>
 
   <a href="work.html" class="back">⬅ Back to Work</a>
